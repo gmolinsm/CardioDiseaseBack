@@ -16,6 +16,10 @@ if os.path.isfile("./model.pkl"):
 else:
   raise FileNotFoundError
 
+@app.route('/', methods=['GET'])
+def get():
+  return "This is a flask endpoint"
+
 @app.route('/predict', methods=['POST'])
 def post():
   record = json.loads(request.data)
